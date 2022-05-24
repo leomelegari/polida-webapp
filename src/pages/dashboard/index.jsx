@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
-import { verify } from "jsonwebtoken";
+// import { verify } from "jsonwebtoken";
+import Header from "../../components/Header";
 
 const Dashboard = ({ auth, token }) => {
   // const token = JSON.parse(localStorage)
@@ -8,7 +9,7 @@ const Dashboard = ({ auth, token }) => {
 
   // useEffect(() => {}, []);
 
-  verify(token);
+  // verify(token);
 
   if (!auth) {
     return <Redirect to="/login" />;
@@ -16,8 +17,7 @@ const Dashboard = ({ auth, token }) => {
 
   return (
     <div>
-      TESTE
-      <p>OLÀ</p>
+      <Header />
     </div>
   );
 };
