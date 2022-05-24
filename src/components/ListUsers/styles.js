@@ -30,11 +30,8 @@ export const Card = styled.div`
     border-radius: 8px;
     margin-bottom: 10px;
 
-    .name {
-        text-align: start;
-    }
-    .contact {
-        text-align: end;
+    .name, .contact, .order {
+        width: 33%;
     }
 
 `

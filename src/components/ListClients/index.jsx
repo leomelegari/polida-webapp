@@ -6,7 +6,7 @@ const ListClients = () => {
   console.log("clients ", clients);
 
   return (
-    <Container>
+    <Container style={clients.length < 9 ? { overflow: "hidden" } : null}>
       {clients.map((client, index) => {
         return (
           <Card key={client.contact} className={`client client_${index}`}>

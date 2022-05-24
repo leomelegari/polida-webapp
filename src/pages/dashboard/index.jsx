@@ -1,28 +1,26 @@
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
-// import jwt from "jwt-decode";
 import Header from "../../components/Header";
 import { Container } from "./styles";
-import Client from "../Client";
+import Client from "../client";
+import Users from "../users";
 
 const Dashboard = ({ auth }) => {
-  // const token = localStorage.getItem("@POLIDA:token");
   const [actualPage, setActualPage] = useState("dashboard");
+ console.log("actualPage ", actualPage);
 
   if (!auth) {
     return <Redirect to="/login" />;
   }
-
-//   const user = jwt(token); // decode your token here
-//  console.log("user ", user);
 
   return (
     <Container>
       <Header setActualPage={setActualPage} />
       {actualPage === "dashboard" ? null : actualPage === "clients" ? (
         <Client />
+      ) : actualPage === "users" ? (
+        <Users />
       ) : null}
-      {/* {history} */}
     </Container>
   );
 };

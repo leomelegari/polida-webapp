@@ -2,13 +2,19 @@ import { Link } from "react-router-dom";
 import { Container } from "./styles";
 import Logo from "../../assets/img/POLIDA3.png";
 import { useClients } from "../../providers/Client";
+import { useUsers } from "../../providers/Users";
 
 const Header = ({ setActualPage }) => {
   const { listClients } = useClients();
+  const { listUsers } = useUsers();
 
   const clientsHandler = () => {
     listClients();
     setActualPage("clients");
+  };
+  const usersHandler = () => {
+    listUsers();
+    setActualPage("users");
   };
 
   return (
@@ -17,7 +23,7 @@ const Header = ({ setActualPage }) => {
         <img src={Logo} alt="" />
       </div>
       <button onClick={clientsHandler}>Clientes</button>
-      <button>Usuário/Técnico</button>
+      <button onClick={usersHandler}>Usuário/Técnico</button>
       <Link to="/serviceOrder">
         <button>Ordens de serviços</button>
       </Link>

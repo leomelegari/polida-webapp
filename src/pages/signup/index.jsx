@@ -40,7 +40,7 @@ const Signup = ({ auth }) => {
 
   const onHandleSubmit = async ({ name, cpf, contact, password }) => {
     setLoading(true);
-    const newUser = { name, cpf, password, contact, isAdmin: false };
+    const newUser = { name, cpf, password, contact, isAdmin: true };
     await api
       .post("/users", newUser)
       .then((res) => {
