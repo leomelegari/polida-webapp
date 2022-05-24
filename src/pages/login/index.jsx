@@ -7,7 +7,8 @@ import * as yup from "yup";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import { Container } from "./styles";
+import { Container, Form } from "./styles";
+import logo from "../../assets/logo.svg";
 
 const Login = ({ auth, setAuth }) => {
   const schema = yup.object().shape({
@@ -46,26 +47,32 @@ const Login = ({ auth, setAuth }) => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit(onHandleSubmit)}>
-        <Input
-          register={register}
-          name="cpf"
-          placeholder="CPF (apenas números)"
-          type="text"
-        />
-        <span className="error">{errors.cpf?.message}</span>
-        <Input
-          register={register}
-          name="password"
-          placeholder="Digite sua senha"
-          type="password"
-        />
-        <span className="error">{errors.password?.message}</span>
-        <Button type="submit">Entrar</Button>
-      </form>
-      <span>
-        Ainda não tem cadastro? <Link to="/signup">Clique aqui</Link>
-      </span>
+      <img src={logo} alt="Polida logo" />
+      <Form>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit(onHandleSubmit)}>
+          <label htmlFor="">CPF</label>
+          <Input
+            register={register}
+            name="cpf"
+            placeholder="apenas números"
+            type="text"
+          />
+          <span className="error">{errors.cpf?.message}</span>
+          <label htmlFor="">SENHA</label>
+          <Input
+            register={register}
+            name="password"
+            placeholder="digite sua senha"
+            type="password"
+          />
+          <span className="error">{errors.password?.message}</span>
+          <Button type="submit">Entrar</Button>
+        </form>
+        <span>
+          Ainda não tem cadastro? <Link to="/signup">Clique aqui</Link>
+        </span>
+      </Form>
     </Container>
   );
 };

@@ -7,6 +7,8 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         outline: 0;
+        font-family: 'Inter', sans-serif;
+        font-weight: lighter;
         
     }
 
@@ -41,6 +43,10 @@ export default createGlobalStyle`
         --gray-two: #848484;
         --gray-three: #616161;
         --gray-four: #232323;
+
+        --background: #1F287B;
+
+        --button: #005E9E;
     }
 
-`
+`;
