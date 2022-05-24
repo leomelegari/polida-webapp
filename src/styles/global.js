@@ -10,6 +10,12 @@ export default createGlobalStyle`
         font-family: 'Inter', sans-serif;
         font-weight: lighter;
         
+        
+    }
+
+    body {
+        background-color: var(--background);
+
     }
 
     button {
