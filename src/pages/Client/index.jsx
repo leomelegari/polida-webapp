@@ -1,11 +1,11 @@
-import ListClients from "../../components/ListClients/styles";
+import ListClients from "../../components/ListClients";
+import { Container } from "./styles";
 
-const Client = ({ clients }) => {
+const Client = () => {
   return (
-    <div>
-      <ListClients clients={clients} />
-      <div>Clientes</div>
-    </div>
+    <Container>
+      <ListClients />
+    </Container>
   );
 };
 
