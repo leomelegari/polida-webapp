@@ -1,20 +1,23 @@
 import { Link } from "react-router-dom";
 import { Container } from "./styles";
 import Logo from "../../assets/img/POLIDA3.png";
+import { useClients } from "../../providers/Client";
 
-const Header = () => {
+const Header = ({ setActualPage }) => {
+  const { listClients } = useClients();
+
+  const clientsHandler = () => {
+    listClients();
+    setActualPage("clients");
+  };
 
   return (
     <Container>
       <div>
         <img src={Logo} alt="" />
       </div>
-      {/* <Link to="clients"> */}
-      <button>Clientes</button>
-      {/* </Link> */}
-      <Link to="/users">
-        <button>Usuário/Técnico</button>
-      </Link>
+      <button onClick={clientsHandler}>Clientes</button>
+      <button>Usuário/Técnico</button>
       <Link to="/serviceOrder">
         <button>Ordens de serviços</button>
       </Link>
