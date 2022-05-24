@@ -8,6 +8,7 @@ export const InputArea = styled.input`
     -moz-appearance: textfield;
     appearance: textfield;
   }
+  color: var(--button);
   padding-left: 10px;
   border-radius: 20px;
   border: none;
