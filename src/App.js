@@ -7,9 +7,7 @@ function App() {
 
   return (
     <>
-      <Routes />
-      <ToastContainer position="top-center" />
-      <GlobalStyle />
+
     </>
   );
 }
