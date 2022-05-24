@@ -14,6 +14,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: 20vw;
+    min-width: 250px;
     height: 20vh;
     display: flex;
     align-items: flex-start;
@@ -26,6 +27,12 @@ export const Container = styled.div`
       height: 20%;
     }
   }
+
+  /* @media only screen and (max-width: 768px) {
+    form {
+      width: 80vw;
+    }
+  } */
 `;
 
 export const Form = styled.div`
@@ -35,6 +42,9 @@ export const Form = styled.div`
   color: var(--secondary-two);
   border-radius: 5px;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h2 {
     font-size: 1.5rem;
