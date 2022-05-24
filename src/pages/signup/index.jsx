@@ -7,8 +7,11 @@ import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
+import { useState } from "react";
 
 const Signup = ({ auth }) => {
+  const [loading, setLoading] = useState(false);
+
   const schema = yup.object().shape({
     name: yup.string().required("Nome obrigatório"),
     cpf: yup.string().required("CPF obrigatório"),
@@ -34,17 +37,21 @@ const Signup = ({ auth }) => {
 
   const history = useHistory();
 
-  const onHandleSubmit = ({ name, cpf, contact, password }) => {
+  const onHandleSubmit = async ({ name, cpf, contact, password }) => {
+    setLoading(true);
     const newUser = { name, cpf, password, contact, isAdmin: false };
-    console.log("newUser ", newUser);
-    api
+    await api
       .post("/users", newUser)
       .then((res) => {
         toast.success("Cadastro realizado com sucesso");
+        setLoading(false);
 
         return history.push("/login");
       })
-      .catch((err) => toast.error("CPF já cadastrado"));
+      .catch((err) => {
+        setLoading(false);
+        toast.error("CPF já cadastrado");
+      });
   };
 
   if (auth) {
@@ -89,7 +96,7 @@ const Signup = ({ auth }) => {
           type="email"
         />
         <span className="error">{errors.contact?.message}</span>
-        <Button type="submit">Cadastrar</Button>
+        <Button type="submit">{loading ? "carregando..." : "Entrar"}</Button>
       </form>
       <span>
         Já tem cadastro? <Link to="/login">Fazer login</Link>

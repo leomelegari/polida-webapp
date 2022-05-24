@@ -2,14 +2,17 @@ import Button from "../../components/Button";
 import Input from "../../components/Input";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect, useHistory, Link } from "react-router-dom";
 import * as yup from "yup";
 import api from "../../services/api";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
 import { Container } from "./styles";
+import { useState } from "react";
 
 const Login = ({ auth, setAuth }) => {
+  const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+
   const schema = yup.object().shape({
     cpf: yup.string().required("CPF obrigatório"),
     password: yup.string().required("Senha obrigatória"),
@@ -23,9 +26,9 @@ const Login = ({ auth, setAuth }) => {
 
   const history = useHistory();
 
-  const onHandleSubmit = (data) => {
-    console.log(data);
-    api
+  const onHandleSubmit = async (data) => {
+    setLoading(true);
+    await api
       .post("/users/login", data)
       .then((res) => {
         const { token } = res.data;
@@ -34,10 +37,14 @@ const Login = ({ auth, setAuth }) => {
         toast.success("Login realizado com sucesso");
 
         setAuth(true);
+        setLoading(false);
 
         return history.push("/dashboard");
       })
-      .catch((err) => toast.error("E-mail ou senha inválidos"));
+      .catch((err) => {
+        toast.error("E-mail ou senha inválidos");
+        setLoading(false);
+      });
   };
 
   if (auth) {
@@ -61,7 +68,7 @@ const Login = ({ auth, setAuth }) => {
           type="password"
         />
         <span className="error">{errors.password?.message}</span>
-        <Button type="submit">Entrar</Button>
+        <Button type="submit">{loading ? "carregando..." : "Entrar"}</Button>
       </form>
       <span>
         Ainda não tem cadastro? <Link to="/signup">Clique aqui</Link>
