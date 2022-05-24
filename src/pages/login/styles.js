@@ -51,6 +51,7 @@ export const Form = styled.div`
   }
 
   label {
+    padding-left: 10px;
     text-align: left;
     font-size: 0.9rem;
   }
