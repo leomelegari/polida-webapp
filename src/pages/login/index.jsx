@@ -68,10 +68,10 @@ const Login = ({ auth, setAuth }) => {
           <span className="error">{errors.cpf?.message}</span>
           <label htmlFor="">SENHA</label>
           <Input
+            type="password"
             register={register}
             name="password"
             placeholder="digite sua senha"
-            type="password"
           />
           <span className="error">{errors.password?.message}</span>
           <Button type="submit">{loading ? "carregando..." : "Entrar"}</Button>

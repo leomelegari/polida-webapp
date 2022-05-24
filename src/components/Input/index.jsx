@@ -1,6 +1,6 @@
 import { InputArea } from "./styles";
 
-const Input = ({ label, register, name, type, ...rest }) => {
+const Input = ({ label, register, name, ...rest }) => {
   return <InputArea {...rest} {...register(name)} />;
 };
 
