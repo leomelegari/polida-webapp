@@ -5,7 +5,7 @@ import { useUsers } from "../../providers/Users";
 import { useOrders } from "../../providers/Orders";
 import { useServices } from "../../providers/Services";
 
-const Header = ({ setActualPage }) => {
+const Header = ({ setActualPage, setAuth }) => {
   const { listClients } = useClients();
   const { listUsers } = useUsers();
   const { listOrders } = useOrders();
@@ -27,16 +27,23 @@ const Header = ({ setActualPage }) => {
     listServices();
     setActualPage("services");
   };
+  const logout = () => {
+    localStorage.clear();
+    setAuth(false);
+  };
 
   return (
     <Container>
-      <div>
+      <div className="logo">
         <img src={Logo} alt="" />
       </div>
-      <button onClick={clientsHandler}>Clientes</button>
-      <button onClick={usersHandler}>Usuário/Técnico</button>
-      <button onClick={ordersHandler}>Ordens de serviços</button>
-      <button onClick={servicesHandler}>Tipos de serviços</button>
+      <div className="buttons">
+        <button onClick={clientsHandler}>Clientes</button>
+        <button onClick={usersHandler}>Usuário/Técnico</button>
+        <button onClick={ordersHandler}>Ordens de serviços</button>
+        <button onClick={servicesHandler}>Tipos de serviços</button>
+        <button onClick={logout}>Sair</button>
+      </div>
     </Container>
   );
 };

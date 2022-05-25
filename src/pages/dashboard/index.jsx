@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 import Orders from "../orders";
 import Services from "../services";
 
-const Dashboard = ({ auth }) => {
+const Dashboard = ({ auth, setAuth }) => {
   const [actualPage, setActualPage] = useState("dashboard");
 
   if (!auth) {
@@ -17,7 +17,7 @@ const Dashboard = ({ auth }) => {
 
   return (
     <Container>
-      <Header setActualPage={setActualPage} />
+      <Header setActualPage={setActualPage} setAuth={setAuth}/>
       {actualPage === "dashboard" ? null : actualPage === "clients" ? (
         <Client />
       ) : actualPage === "users" ? (

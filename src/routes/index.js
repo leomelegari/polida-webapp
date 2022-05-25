@@ -30,7 +30,7 @@ const Routes = () => {
                 <Signup auth={auth} />
             </Route>
             <Route path="/dashboard">
-                <Dashboard auth={auth} token={token} />
+                <Dashboard auth={auth} setAuth={setAuth} />
             </Route>
         </Switch>
     )
