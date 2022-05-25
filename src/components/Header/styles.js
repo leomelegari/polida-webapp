@@ -27,6 +27,18 @@ export const Container = styled.div`
             color: white;
             font-size: 15px;
             border-radius: 8px;
+            transition: 0.3s;
+
+            :hover {
+                background-color: var(--primary-three);
+            }
+        }
+        .logout {
+            background-color: firebrick;
+
+            :hover {
+                background-color: red;
+            }
         }
     }
 `

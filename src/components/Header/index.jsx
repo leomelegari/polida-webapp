@@ -42,7 +42,7 @@ const Header = ({ setActualPage, setAuth }) => {
         <button onClick={usersHandler}>Usuário/Técnico</button>
         <button onClick={ordersHandler}>Ordens de serviços</button>
         <button onClick={servicesHandler}>Tipos de serviços</button>
-        <button onClick={logout}>Sair</button>
+        <button onClick={logout} className="logout">Sair</button>
       </div>
     </Container>
   );
