@@ -12,7 +12,6 @@ import logo from "../../assets/logo.svg";
 
 const Login = ({ auth, setAuth }) => {
   const [loading, setLoading] = useState(false);
-  // const [disabled, setDisabled] = useState(false);
 
   const schema = yup.object().shape({
     cpf: yup.string().required("CPF obrigatório"),

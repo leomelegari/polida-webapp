@@ -3,7 +3,6 @@ import { Card, Container } from "./styles";
 
 const ListUsers = () => {
   const { users } = useUsers();
-  console.log("users ", users);
 
   return (
     <Container style={users.length < 9 ? { overflow: "hidden" } : null}>

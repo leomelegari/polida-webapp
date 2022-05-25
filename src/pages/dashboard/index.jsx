@@ -6,10 +6,10 @@ import Client from "../client";
 import Users from "../users";
 import Footer from "../../components/Footer";
 import Orders from "../orders";
+import Services from "../services";
 
 const Dashboard = ({ auth }) => {
   const [actualPage, setActualPage] = useState("dashboard");
-  console.log("actualPage ", actualPage);
 
   if (!auth) {
     return <Redirect to="/login" />;
@@ -24,6 +24,8 @@ const Dashboard = ({ auth }) => {
         <Users />
       ) : actualPage === "orders" ? (
         <Orders />
+      ) : actualPage === "services" ? (
+        <Services />
       ) : null}
       <Footer />
     </Container>

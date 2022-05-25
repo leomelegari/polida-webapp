@@ -3,7 +3,6 @@ import { Card, Container } from "./styles";
 
 const ListClients = () => {
   const { clients } = useClients();
-  console.log("clients ", clients);
 
   return (
     <Container style={clients.length < 9 ? { overflow: "hidden" } : null}>

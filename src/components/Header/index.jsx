@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
 import { Container } from "./styles";
 import Logo from "../../assets/img/POLIDA3.png";
 import { useClients } from "../../providers/Client";
 import { useUsers } from "../../providers/Users";
 import { useOrders } from "../../providers/Orders";
+import { useServices } from "../../providers/Services";
 
 const Header = ({ setActualPage }) => {
   const { listClients } = useClients();
   const { listUsers } = useUsers();
   const { listOrders } = useOrders();
+  const { listServices } = useServices();
 
   const clientsHandler = () => {
     listClients();
@@ -22,6 +23,10 @@ const Header = ({ setActualPage }) => {
     listOrders();
     setActualPage("orders");
   };
+  const servicesHandler = () => {
+    listServices();
+    setActualPage("services");
+  };
 
   return (
     <Container>
@@ -31,9 +36,7 @@ const Header = ({ setActualPage }) => {
       <button onClick={clientsHandler}>Clientes</button>
       <button onClick={usersHandler}>Usuário/Técnico</button>
       <button onClick={ordersHandler}>Ordens de serviços</button>
-      <Link to="/serviceType">
-        <button>Tipos de serviços</button>
-      </Link>
+      <button onClick={servicesHandler}>Tipos de serviços</button>
     </Container>
   );
 };

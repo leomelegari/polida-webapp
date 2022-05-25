@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
 import { useOrders } from "../../providers/Orders";
-import { useUsers } from "../../providers/Users";
 import { Card, Container } from "./styles";
 
 const ListOrders = () => {
   const { orders } = useOrders();
-  // const { listOneUser } = useUsers();
-  console.log("orders ", orders);
 
   return (
     <Container style={orders.length < 9 ? { overflow: "hidden" } : null}>
