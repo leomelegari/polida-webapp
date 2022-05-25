@@ -1,9 +1,11 @@
-import { Container } from "./styles";
+import { Container, ContainerFooter } from "./styles";
 
 const Footer = () => {
   return (
     <Container>
-      <span>® POLIDA trade mark</span>
+      <ContainerFooter>
+        <span>® POLIDA trade mark</span>
+      </ContainerFooter>
     </Container>
   );
 };
