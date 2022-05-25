@@ -44,4 +44,18 @@ export const Card = styled.div`
     font-weight: bolder;
     font-size: 1.3rem;
   }
+
+  .btn_users {
+    background-color: var(--background);
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    transition: 0.3s;
+
+    :hover {
+      background-color: var(--button);
+    }
+  }
 `;

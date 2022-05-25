@@ -30,14 +30,10 @@ const ListUsers = () => {
               </div>
               <div className="order">
                 {user.service_order.length >= 1 ? (
-                  <button>Ver todas</button>
+                  <button className="btn_users">Ver todas</button>
                 ) : (
                   "Nenhuma O.S cadastrada"
                 )}
-
-                {/* {user.service_order.map((service) => {
-                return <div>{service.id};</div>;
-              })} */}
               </div>
             </Card>
             <div className="line">_</div>
