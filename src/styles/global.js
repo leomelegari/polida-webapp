@@ -65,26 +65,28 @@ export default createGlobalStyle`
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #a8a8a8;
-  border: 0px none #ffffff;
+  background: #fff;
+  border: 3px solid #1F287B;
   border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #fff;
+  border: 3px solid #1F287B;
+  border-radius: 100px;
 }
 ::-webkit-scrollbar-thumb:active {
-  background: #707070;
+  background: #005ED9;
 }
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #1F287B;
   border: 0px none #ffffff;
-  border-radius: 36px;
+  /* border-radius: 36px; */
 }
 ::-webkit-scrollbar-track:hover {
-  background: #ffffff;
+  background: #1F287B;
 }
 ::-webkit-scrollbar-track:active {
-  background: #ffffff;
+
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
