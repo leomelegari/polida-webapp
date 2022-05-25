@@ -5,6 +5,7 @@ import { Container } from "./styles";
 import Client from "../client";
 import Users from "../users";
 import Footer from "../../components/Footer";
+import Orders from "../orders";
 
 const Dashboard = ({ auth }) => {
   const [actualPage, setActualPage] = useState("dashboard");
@@ -21,6 +22,8 @@ const Dashboard = ({ auth }) => {
         <Client />
       ) : actualPage === "users" ? (
         <Users />
+      ) : actualPage === "orders" ? (
+        <Orders />
       ) : null}
       <Footer />
     </Container>
