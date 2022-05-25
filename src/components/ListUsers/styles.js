@@ -14,7 +14,7 @@ export const Container = styled.div`
   overflow-x: hidden;
 
   .line {
-    height: 3px;
+    height: 2px;
     width: 110%;
     margin-bottom: 10px;
     background-color: var(--background);
