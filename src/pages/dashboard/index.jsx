@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import { Container } from "./styles";
 import Client from "../Client";
 import Users from "../users";
+import Footer from "../../components/Footer";
 
 const Dashboard = ({ auth }) => {
   const [actualPage, setActualPage] = useState("dashboard");
@@ -21,6 +22,7 @@ const Dashboard = ({ auth }) => {
       ) : actualPage === "users" ? (
         <Users />
       ) : null}
+      <Footer />
     </Container>
   );
 };

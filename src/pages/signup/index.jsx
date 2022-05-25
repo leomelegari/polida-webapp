@@ -102,7 +102,9 @@ const Signup = ({ auth }) => {
             type="password"
           />
           <span className="error">{errors.confirmPassword?.message}</span>
-          <Button type="submit">{loading ? "carregando..." : "Entrar"}</Button>
+          <Button type="submit">
+            {loading ? "carregando..." : "Cadastrar"}
+          </Button>
         </form>
         <span>
           Já tem cadastro? <Link to="/login">Fazer login</Link>
