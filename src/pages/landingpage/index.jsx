@@ -1,13 +1,7 @@
-import { Link } from "react-router-dom";
-import { Container } from "./styles";
+import { Redirect } from "react-router-dom";
 
 const Landingpage = () => {
-  return (
-    <Container>
-      <div>Bom dia!</div>
-      <Link to="/login">Fazer login</Link>
-    </Container>
-  );
+  return <Redirect to="/login" />;
 };
 
 export default Landingpage;

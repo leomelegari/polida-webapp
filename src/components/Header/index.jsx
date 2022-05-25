@@ -3,10 +3,12 @@ import { Container } from "./styles";
 import Logo from "../../assets/img/POLIDA3.png";
 import { useClients } from "../../providers/Client";
 import { useUsers } from "../../providers/Users";
+import { useOrders } from "../../providers/Orders";
 
 const Header = ({ setActualPage }) => {
   const { listClients } = useClients();
   const { listUsers } = useUsers();
+  const { listOrders } = useOrders();
 
   const clientsHandler = () => {
     listClients();
@@ -16,6 +18,10 @@ const Header = ({ setActualPage }) => {
     listUsers();
     setActualPage("users");
   };
+  const ordersHandler = () => {
+    listOrders();
+    setActualPage("orders");
+  };
 
   return (
     <Container>
@@ -24,9 +30,7 @@ const Header = ({ setActualPage }) => {
       </div>
       <button onClick={clientsHandler}>Clientes</button>
       <button onClick={usersHandler}>Usuário/Técnico</button>
-      <Link to="/serviceOrder">
-        <button>Ordens de serviços</button>
-      </Link>
+      <button onClick={ordersHandler}>Ordens de serviços</button>
       <Link to="/serviceType">
         <button>Tipos de serviços</button>
       </Link>
