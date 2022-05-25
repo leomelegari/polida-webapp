@@ -14,6 +14,13 @@ export const Container = styled.div`
     overflow-y: scroll;
     overflow-x: hidden;
 
+    .line {
+    height: 3px;
+    width: 110%;
+    margin-bottom: 10px;
+    background-color: var(--background);
+  }
+
 `
 
 export const Card = styled.div`
@@ -21,7 +28,6 @@ export const Card = styled.div`
     width: 100%;
     height: 65px;
     display: flex;
-    background-color: var(--gray-one);
     justify-content: space-between;
     align-items: center;
     line-height: 35px;
@@ -30,8 +36,13 @@ export const Card = styled.div`
     border-radius: 8px;
     margin-bottom: 10px;
 
-    .name, .contact, .order, .unit, .type {
+    .name, .address, .order, .status, .type {
         width: 20%;
+    }
+
+    .title {
+        font-weight: bolder;
+        font-size: 1.3rem;
     }
 
 `
