@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import Header from "../../components/Header";
 import { Container } from "./styles";
-import Client from "../client";
+import Client from "../Client";
 import Users from "../users";
 import Footer from "../../components/Footer";
 import Orders from "../orders";
