@@ -7,6 +7,15 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
+  img {
+    width: 200px;
+    -moz-box-shadow: 0px 6px 5px #ccc;
+    -webkit-box-shadow: 0px 6px 5px #ccc;
+    box-shadow: 0px 0px 15px #ccc;
+    -moz-border-radius: 180px;
+    -webkit-border-radius: 190px;
+    border-radius: 190px;
+  }
 
   form {
     display: flex;
@@ -20,8 +29,30 @@ export const Container = styled.div`
     justify-content: space-around;
     margin-bottom: 5px;
 
-    input,
+    input {
+      width: 100%;
+      border-radius: 30px;
+      height: 20%;
+      border: none;
+      padding: 10px;
+      box-shadow: 1px 1px #666;
+    }
+    input::placeholder {
+      color: var(--primary-two);
+    }
+    input:focus,
+    textarea:focus {
+      color: #000;
+      background-color: var(--secondary-one);
+      border: 2px solid var(--secondary-two);
+    }
     button {
+      border-radius: 5px;
+      border: none;
+      height: 50px;
+      color: #fff;
+      background-color: var(--button);
+      box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
       width: 100%;
       height: 20%;
     }
@@ -46,6 +77,7 @@ export const Form = styled.div`
   align-items: center;
 
   h2 {
+    text-shadow: 1px 1px 2px black;
     font-size: 1.5rem;
   }
 
@@ -53,13 +85,18 @@ export const Form = styled.div`
     padding-left: 10px;
     text-align: left;
     font-size: 0.9rem;
+    text-shadow: 1px 1px 2px black;
   }
 
   span {
+    text-shadow: 1px 1px 2px black;
     font-size: 0.7rem;
     color: var(--secondary-three);
     a {
       color: var(--secondary-three);
+    }
+    a.bold {
+      font-weight: 700;
     }
   }
 `;

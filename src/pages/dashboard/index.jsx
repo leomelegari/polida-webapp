@@ -7,7 +7,7 @@ import Users from "../users";
 
 const Dashboard = ({ auth }) => {
   const [actualPage, setActualPage] = useState("dashboard");
- console.log("actualPage ", actualPage);
+  console.log("actualPage ", actualPage);
 
   if (!auth) {
     return <Redirect to="/login" />;

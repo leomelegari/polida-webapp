@@ -5,10 +5,9 @@ import { useHistory, Link, Redirect } from "react-router-dom";
 import api from "../../services/api";
 import { toast } from "react-toastify";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
 import { useState } from "react";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/img/POLIDA.png";
+import { motion } from "framer-motion";
 
 const Signup = ({ auth }) => {
   const [loading, setLoading] = useState(false);
@@ -67,45 +66,59 @@ const Signup = ({ auth }) => {
         <form onSubmit={handleSubmit(onHandleSubmit)}>
           <h2>Cadastro:</h2>
 
-          <Input
+          <motion.input
+            whileFocus={{ scale: 1.1, transition: { duration: 0.5 } }}
             register={register}
             name="name"
             placeholder="Digite seu nome"
             type="text"
           />
           <span className="error">{errors.name?.message}</span>
-          <Input
+          <motion.input
+            whileFocus={{ scale: 1.1, transition: { duration: 0.5 } }}
             register={register}
             name="cpf"
             placeholder="Digite seu CPF"
-            type="number"
+            type="text"
           />
           <span className="error">{errors.cpf?.message}</span>
-          <Input
+          <motion.input
+            whileFocus={{ scale: 1.1, transition: { duration: 0.5 } }}
             register={register}
             name="contact"
             placeholder="Digite seu e-mail"
             type="email"
           />
           <span className="error">{errors.contact?.message}</span>
-          <Input
+          <motion.input
+            whileFocus={{ scale: 1.1, transition: { duration: 0.5 } }}
             register={register}
             name="password"
             placeholder="Digite sua senha"
             type="password"
           />
           <span className="error">{errors.password?.message}</span>
-          <Input
+          <motion.input
+            whileFocus={{ scale: 1.1, transition: { duration: 0.5 } }}
             register={register}
             name="confirmPassword"
             placeholder="Confirme sua senha"
             type="password"
           />
           <span className="error">{errors.confirmPassword?.message}</span>
-          <Button type="submit">{loading ? "carregando..." : "Entrar"}</Button>
+          <motion.button
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.5 },
+            }}
+            whileTap={{ scale: 0.9 }}
+            type="submit"
+          >
+            {loading ? "carregando..." : "Entrar"}
+          </motion.button>
         </form>
         <span>
-          Já tem cadastro? <Link to="/login">Fazer login</Link>
+          Já tem cadastro? <Link to="/login" className="bold">Fazer login</Link>
         </span>
       </Form>
     </Container>
