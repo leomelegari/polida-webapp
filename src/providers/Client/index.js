@@ -2,16 +2,14 @@ import { createContext, useContext, useState } from "react";
 import api from "../../services/api";
 
 const ClientsContext = createContext({});
-// const UserContext = createContext({});
 const initial = [];
 
 export const ClientsProvider = ({ children }) => {
   const [clients, setClients] = useState(initial);
   const [setUsers] = useState(initial);
 
-  const token = JSON.parse(localStorage.getItem("@POLIDA:token")) || [];
-
   const listClients = async () => {
+    const token = JSON.parse(localStorage.getItem("@POLIDA:token")) || [];
     await api
       .get(`/clients`, {
         headers: {
@@ -24,6 +22,7 @@ export const ClientsProvider = ({ children }) => {
   };
 
   const listUsers = async () => {
+    const token = JSON.parse(localStorage.getItem("@POLIDA:token")) || [];
     await api
       .get("/users", {
         headers: {

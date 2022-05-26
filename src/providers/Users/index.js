@@ -7,9 +7,8 @@ const initial = [];
 export const UsersProvider = ({ children }) => {
     const [users, setUsers] = useState(initial);
 
-    const token = JSON.parse(localStorage.getItem("@POLIDA:token")) || [];
-
     const listUsers = async () => {
+        const token = JSON.parse(localStorage.getItem("@POLIDA:token")) || [];
         await api.get("/users", {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -19,6 +18,7 @@ export const UsersProvider = ({ children }) => {
         })
     }
     const listOneUser = async (id) => {
+        const token = JSON.parse(localStorage.getItem("@POLIDA:token")) || [];
         await api.get(`/users/${id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
