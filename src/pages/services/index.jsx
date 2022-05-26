@@ -1,10 +1,10 @@
 import ListServices from "../../components/ListServices";
 import { Container } from "./styles";
 
-const Services = () => {
+const Services = ({ setActualPage }) => {
   return (
     <Container>
-      <ListServices />
+      <ListServices setActualPage={setActualPage} />
     </Container>
   );
 };

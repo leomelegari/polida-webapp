@@ -1,10 +1,10 @@
 import ListOrders from "../../components/ListOrders";
 import { Container } from "./styles";
 
-const Orders = () => {
+const Orders = ({ setActualPage }) => {
   return (
     <Container>
-      <ListOrders />
+      <ListOrders setActualPage={setActualPage} />
     </Container>
   );
 };

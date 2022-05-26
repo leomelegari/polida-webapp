@@ -1,11 +1,15 @@
 import { useUsers } from "../../providers/Users";
 import { Card, Container } from "./styles";
+import { CgCloseR } from "react-icons/cg";
 
-const ListUsers = () => {
+const ListUsers = ({ setActualPage }) => {
   const { users } = useUsers();
 
   return (
     <Container style={users.length < 9 ? { overflow: "hidden" } : null}>
+      <div className="close">
+        <CgCloseR onClick={() => setActualPage("dashboard")} />
+      </div>
       <Card className="card">
         <div className="name">
           <div className="title">Nome</div>

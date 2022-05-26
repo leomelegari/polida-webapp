@@ -20,6 +20,23 @@ export const Container = styled.div`
     background-color: var(--background);
     }
 
+    .close {
+    width: 100%;
+    text-align: end;
+    height: fit-content;
+    position: relative;
+    font-size: 25px;
+    color: red;
+    
+    svg {
+      cursor: pointer;
+      transition: 0.2s;
+      :hover {
+        transform: scale(1.2)
+      }
+    }
+  }
+
 `
 
 export const Card = styled.div`

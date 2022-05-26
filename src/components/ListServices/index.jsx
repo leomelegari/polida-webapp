@@ -1,11 +1,15 @@
 import { useServices } from "../../providers/Services";
 import { Card, Container } from "./styles";
+import { CgCloseR } from "react-icons/cg";
 
-const ListServices = () => {
+const ListServices = ({ setActualPage }) => {
   const { services } = useServices();
 
   return (
     <Container style={services.length < 9 ? { overflow: "hidden" } : null}>
+      <div className="close">
+        <CgCloseR onClick={() => setActualPage("dashboard")} />
+      </div>
       <Card className="card">
         <div className="type">
           <div className="title">Tipo</div>

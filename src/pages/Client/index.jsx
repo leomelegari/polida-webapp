@@ -1,10 +1,10 @@
 import ListClients from "../../components/ListClients";
 import { Container } from "./styles";
 
-const Client = () => {
+const Client = ({ setActualPage }) => {
   return (
     <Container>
-      <ListClients />
+      <ListClients setActualPage={setActualPage} />
     </Container>
   );
 };

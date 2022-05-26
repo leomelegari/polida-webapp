@@ -18,8 +18,8 @@ export const Container = styled.div`
 
     .buttons {
         display: flex;
-        width: 50%;
-        justify-content: space-between;
+        width: 950px;
+        justify-content: space-evenly;
         button {
             width: 150px;
             height: 40px;
